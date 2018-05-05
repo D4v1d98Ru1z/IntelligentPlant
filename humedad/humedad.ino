@@ -1,4 +1,4 @@
-const int pinSenHum = 10;
+const int pinSenHum = A0;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -6,11 +6,11 @@ void setup() {
 }
 
 void loop() {
-  int humedad = digitalRead(sensorPin);
+  int humedad = digitalRead(pinSenHum);
   // Mensaje a puerto serie
   if ( humedad == HIGH) {
-    Serial.println(humedad);
+    Serial.println("Encendido");
   }
-  //espera un segundo para continuar con el proceso.
-  delay(1000); 
+  //espera medio segundo para continuar con el proceso.
+  delay(500); 
 }

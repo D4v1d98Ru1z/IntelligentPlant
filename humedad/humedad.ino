@@ -7,9 +7,13 @@ void setup() {
 
 void loop() {
   int humedad = digitalRead(pinSenHum);
+  Serial.println(humedad);
   // Mensaje a puerto serie
   if ( humedad == HIGH) {
-    Serial.println("Encendido");
+    Serial.println("Se encuentra bastante humedo.");
+  }
+  else {
+    Serial.println("la humedad esta bajando");
   }
   //espera medio segundo para continuar con el proceso.
   delay(500); 

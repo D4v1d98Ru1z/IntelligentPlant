@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
                     if (endOfLineIndex > 0) {
                         String dataInPrint = DataStringIN.substring(0, endOfLineIndex);
-                        txtTerminal.setText("Dato: " + dataInPrint);//<-<- PARTE A MODIFICAR >->->
+                        txtTerminal.setText("Terminal: " + dataInPrint);//<-<- PARTE A MODIFICAR >->->
                         DataStringIN.delete(0, DataStringIN.length());
                     }
                 }
@@ -76,13 +76,13 @@ public class MainActivity extends AppCompatActivity {
         BtnON.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
-//                MyConexionBT.write("1");
+                MyConexionBT.write("1");
             }
         });
 
         BtnOFF.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-//                MyConexionBT.write("0");
+                MyConexionBT.write("0");
             }
         });
 
@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
             catch (IOException e)
             {
                 //si no es posible enviar datos se cierra la conexión
-                Toast.makeText(getBaseContext(), "La Conexión fallo", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "La Conexión falló, no fue posible enviar datos", Toast.LENGTH_LONG).show();
                 finish();
             }
         }
